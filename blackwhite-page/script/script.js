@@ -1,3 +1,5 @@
+
+
 /* DOM elements with background images */
 let backgrounds = document.querySelectorAll(".parallax-background");
 
@@ -123,3 +125,4 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+

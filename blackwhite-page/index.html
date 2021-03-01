@@ -817,11 +817,15 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      var swiper = new Swiper(".swiper1", {
+            var swiper = new Swiper(".swiper1", {
         slidesPerView: 1,
         spaceBetween: 1000,
         centeredSlides: true,
         loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -831,7 +835,10 @@
         spaceBetween: 10,
         calculateHeight: true,
         loop: true,
-
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -862,7 +869,10 @@
       var swiper = new Swiper(".swiper3", {
         slidesPerView: 1,
         spaceBetween: 10,
-        // init: false,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

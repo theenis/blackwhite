@@ -1,11 +1,9 @@
-
-
 /* DOM elements with background images */
 let backgrounds = document.querySelectorAll(".parallax-background");
 
 $(() => {
     "use strict";
-    
+
     /* global namespace */
     let global = {
     	"window": $(window),
@@ -46,58 +44,8 @@ $(() => {
 
 
 
-class FilterGallery {
 
-    constructor() {
-      this.$filtermenuList = $('.filtermenu li');
-      this.$container = $('.container');
-  
-      this.updateMenu('all');
-      this.$filtermenuList.on('click', $.proxy(this.onClickFilterMenu, this));
-    }
-  
-    onClickFilterMenu(event) {
-      const $target = $(event.target);
-      const targetFilter = $target.data('filter');
-  
-      this.updateMenu(targetFilter);
-      this.updateGallery(targetFilter);
-    }
-  
-    updateMenu(targetFilter) {
-      this.$filtermenuList.removeClass('active');
-      this.$filtermenuList.each((index, element) => {
-        const targetData = $(element).data('filter');
-  
-        if (targetData === targetFilter) {
-          $(element).addClass('active');
-        }
-      });
-    }
-  
-    updateGallery(targetFilter) {
-  
-      if (targetFilter === 'all') {
-        this.$container.fadeOut(300, () => {
-          $('.post').show();
-          this.$container.fadeIn();
-        });
-      } else {
-        this.$container.find('.post').each((index, element) => {
-          this.$container.fadeOut(300, () => {
-            if ($(element).hasClass(targetFilter)) {
-              $(element).show();
-            } else {
-              $(element).hide();
-            }
-            this.$container.fadeIn();
-          });
-        });
-      }
-    }}
-  
-  
-  const fliterGallery = new FilterGallery();
+
 
 
 
@@ -117,12 +65,68 @@ class FilterGallery {
 
 
 
-function myFunction() {
+function navbarf() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
     x.className = "topnav";
   }
+} 
+
+
+class FilterGallery {
+  constructor() {
+    this.$filtermenuList = $(".filtermenu li");
+    this.$container = $(".container");
+
+    this.updateMenu("all");
+    this.$filtermenuList.on(
+      "click",
+      $.proxy(this.onClickFilterMenu, this)
+    );
+  }
+
+  onClickFilterMenu(event) {
+    const $target = $(event.target);
+    const targetFilter = $target.data("filter");
+
+    this.updateMenu(targetFilter);
+    this.updateGallery(targetFilter);
+  }
+
+  updateMenu(targetFilter) {
+    this.$filtermenuList.removeClass("active");
+    this.$filtermenuList.each((index, element) => {
+      const targetData = $(element).data("filter");
+
+      if (targetData === targetFilter) {
+        $(element).addClass("active");
+      }
+    });
+  }
+
+  updateGallery(targetFilter) {
+    if (targetFilter === "all") {
+      this.$container.fadeOut(300, () => {
+        $(".post").show();
+        this.$container.fadeIn();
+      });
+    } else {
+      this.$container.find(".post").each((index, element) => {
+        this.$container.fadeOut(300, () => {
+          if ($(element).hasClass(targetFilter)) {
+            $(element).show();
+          } else {
+            $(element).hide();
+          }
+          this.$container.fadeIn();
+        });
+      });
+    }
+  }
 }
+
+const fliterGallery = new FilterGallery();
+
 

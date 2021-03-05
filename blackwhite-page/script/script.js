@@ -1,69 +1,68 @@
-/* DOM elements with background images */
+/* 
+Parallax efekat
+*/
 let backgrounds = document.querySelectorAll(".parallax-background");
 
 $(() => {
-    "use strict";
+  "use strict";
 
-    /* global namespace */
-    let global = {
-    	"window": $(window),
-        "document": $(document),
-        "parallaxBackground": $(backgrounds)
-    };
+  let global = {
+    window: $(window),
+    document: $(document),
+    parallaxBackground: $(backgrounds),
+  };
 
-    /* check if the element is in viewport */
-    $.fn.isInViewport = function() {
-    	let self = $(this); console.info(self);
+  $.fn.isInViewport = function () {
+    let self = $(this);
 
-        let elementTop = self.offset().top;
-        let elementBottom = elementTop + self.outerHeight();
+    let elementTop = self.offset().top;
+    let elementBottom = elementTop + self.outerHeight();
 
-        let viewportTop = global.window.scrollTop();
-        let viewportBottom = viewportTop + global.window.height();
+    let viewportTop = global.window.scrollTop();
+    let viewportBottom = viewportTop + global.window.height();
 
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
 
-    global.window.on("load scroll", () => {
-        let scroll = global.document.scrollTop();
-        let offset = -0.4;
+  global.window.on("load scroll", () => {
+    let scroll = global.document.scrollTop();
+    let offset = -0.4;
 
-        global.parallaxBackground.each(function() {
-        	let self = $(this);
-            let selfPosition = self.offset().top;
+    global.parallaxBackground.each(function () {
+      let self = $(this);
+      let selfPosition = self.offset().top;
 
-        	if (self.isInViewport()) {
-                self.css({
-                    "background-position": "50% " + (selfPosition * offset - scroll * offset) + "px"
-                });
-			}
+      if (self.isInViewport()) {
+        self.css({
+          "background-position":
+            "50% " + (selfPosition * offset - scroll * offset) + "px",
         });
+      }
     });
+  });
 });
 
+/* 
+Preload efekat
+*/
 
+var cooldown = 120;
+for (let i = 0; i < $(".accordeon").children().length; i++) {
+  setTimeout(function () {
+    $(`.accordeon>.slice:eq(${i})`).css(
+      "animation",
+      "SliceHeight .3s  infinite linear"
+    );
+  }, cooldown * i);
+}
 
+$(window).on("load", function () {
+  $(".preloader").fadeOut("slow");
+});
 
-
-
-
-
-
-  var cooldown = 120;
-  for(let i = 0; i < $(".accordeon").children().length; i++){ 
-     setTimeout(function(){
-       $(`.accordeon>.slice:eq(${i})`).css("animation", "SliceHeight .3s  infinite linear");
-     }, cooldown*i);
-   }
- /* jQuery connected */
-
- $(window).on("load", function() {
-   $(".preloader").fadeOut("slow")
- });
-
-
-
-
+/*
+navbar script 
+*/
 
 function navbarf() {
   var x = document.getElementById("myTopnav");
@@ -72,8 +71,27 @@ function navbarf() {
   } else {
     x.className = "topnav";
   }
-} 
+}
 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+/*
+ filter za galeriju 
+*/
 
 class FilterGallery {
   constructor() {
@@ -81,10 +99,7 @@ class FilterGallery {
     this.$container = $(".container");
 
     this.updateMenu("all");
-    this.$filtermenuList.on(
-      "click",
-      $.proxy(this.onClickFilterMenu, this)
-    );
+    this.$filtermenuList.on("click", $.proxy(this.onClickFilterMenu, this));
   }
 
   onClickFilterMenu(event) {
@@ -128,5 +143,3 @@ class FilterGallery {
 }
 
 const fliterGallery = new FilterGallery();
-
-

@@ -90,7 +90,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 /*
- filter za galeriju 
+ filter ta galeriju 
 */
 
 class FilterGallery {

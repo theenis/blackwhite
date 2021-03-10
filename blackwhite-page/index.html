@@ -37,9 +37,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css"
-      integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
   </head>
   <body>
@@ -540,60 +538,129 @@
           </div>
           <div class="isotope-boxx">
             <div id="container" class="isotope clearfix">
-              <ul class="filtermenu">
-                <li data-filter="all">all</li>
-                <li data-filter="design">Design</li>
-                <li data-filter="art">Art</li>
-              </ul>
-              <div class="containerf">
-                <div class="post art">
-                  <div class="post-thumb">
-                    <a href="images/work01.jpg" data-lightbox="image-1">
-                      <img src="images/work01.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-
-                <div class="post design">
-                  <div class="post-thumb">
-                    <a href="images/work02.jpg" data-lightbox="image-2">
-                      <img src="images/work02.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-
-                <div class="post art">
-                  <div class="post-thumb">
-                    <a href="images/work03.jpg" data-lightbox="image-3">
-                      <img src="images/work03.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-
-                <div class="post design">
-                  <div class="post-thumb">
-                    <a href="images/work04.jpg" data-lightbox="image-4">
-                      <img src="images/work04.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-
-                <div class="post art">
-                  <div class="post-thumb">
-                    <a href="images/work05.jpg" data-lightbox="image-5">
-                      <img src="images/work05.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-
-                <div class="post design">
-                  <div class="post-thumb">
-                    <a href="images/work06.jpg" data-lightbox="image-6">
-                      <img src="images/work02.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
+              <div class="filtermenu">
+                <button type="button " class="control button" data-filter="all">
+                  All
+                </button>
+                <button
+                  type="button "
+                  class="control button"
+                  data-filter=".design "
+                >
+                  Design
+                </button>
+                <button
+                  type="button "
+                  class="control button"
+                  data-filter=".art "
+                >
+                  Art
+                </button>
               </div>
+              <ul class="container containerf">
+                <li class="mix art mixart">
+                  <div class="post art">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work01.jpg"
+                        itemprop="contentUrl "
+                      >
+                        <img
+                          src="images/work01.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mix design">
+                  <div class="post design">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work02.jpg"
+                        itemprop="contentUrl "
+                      >
+                        <img
+                          src="images/work02.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mix art">
+                  <div class="post art">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work03.jpg"
+                        itemprop="contentUrl"
+                      >
+                        <img
+                          src="images/work03.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mix design">
+                  <div class="post design">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work04.jpg"
+                        itemprop="contentUrl "
+                      >
+                        <img
+                          src="images/work04.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mix art">
+                  <div class="post art">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work05.jpg"
+                        itemprop="contentUrl "
+                      >
+                        <img
+                          src="images/work05.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="mix design">
+                  <div class="post design">
+                    <div class="post-thumb">
+                      <a
+                        title="click to zoom-in "
+                        href="images/work06.jpg"
+                        itemprop="contentUrl "
+                      >
+                        <img
+                          src="images/work06.jpg"
+                          itemprop="thumbnail "
+                          alt="Image description "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -834,11 +901,9 @@
       integrity="sha512-HYG9E+RmbXS7oy529Nk8byKFw5jqM3R1zzvoV2JnltsIGkK/AhZSzciYCNxDMOXEbYO9w6MJ6SpuYgm5PJPpeQ=="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"
-      integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ=="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
       var swiper = new Swiper(".swiper1", {
         slidesPerView: 1,
@@ -926,11 +991,24 @@
       });
     </script>
     <script>
-      lightbox.option({
-        resizeDuration: 200,
-        disableScrolling: true,
-        wrapAround: true,
-        showImageNumberLabel: false,
+      var containerEl = document.querySelector("ul.container");
+
+      var mixer = mixitup(containerEl, {
+        animation: {
+          effects: "fade translateZ(-100px)",
+          effectsIn: "fade translateY(-100%)",
+          easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+        },
+      });
+
+      $("[data-fancybox]").fancybox({
+        selector: ".mix:visible a",
+        loop: true,
+        hash: true,
+        transitionEffect: "slide",
+        clickContent: function (current, event) {
+          return current.type === "image" ? "next" : false;
+        },
       });
     </script>
   </body>

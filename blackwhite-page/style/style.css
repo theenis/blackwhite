@@ -580,6 +580,10 @@ h5 {
     width: 100%;
   }
 
+  #row3 {
+    padding-top: 15px;
+  }
+
   .thumb2 .thumbnail figure {
     width: 260px !important;
   }
@@ -1154,7 +1158,7 @@ footer {
 }
 
 .services {
-  margin-top: -1000px;
+  margin-top: -1060px;
   margin-bottom: 100px;
 }
 
